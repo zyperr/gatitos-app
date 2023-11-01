@@ -1,0 +1,145 @@
+:root {
+  --bg-main: #14111c;
+  --c-text: #ad92f1;
+  --bg-btn: #705e9c;
+  --bg-hover-btn: #8f78c6;
+  --text-btn: #14111c;
+  --bg-close-btn: #7f2727;
+  --close-color:#f1f1f1;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Courier New", Courier, monospace;
+}
+button {
+  border: none;
+  background-color: var(--bg-btn);
+  padding: 10px 10px;
+  margin: 10px 0px;
+  border-radius: 0.625rem;
+  color: var(--text-btn);
+  font-size: 0.9375rem;
+  cursor: pointer;
+}
+button:hover {
+  background-color: var(--bg-hover-btn);
+  transform: scale(1.1);
+  color: #f1f1f1;
+}
+body {
+  background: var(--bg-main);
+  color: var(--c-text);
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.titles {
+  text-align: left;
+  padding-left: 0.625rem;
+  font-size: 1.875rem;
+}
+#app {
+  text-align: center;
+  position: relative;
+}
+#load {
+  margin: 10px 5px;
+  font-weight: 600;
+}
+
+.cats {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  position: relative;
+}
+.likeCats {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0.625rem;
+  gap: 10px;
+}
+
+.cat-img {
+  width: 18.75rem;
+  height: 18.75rem;
+}
+.cat {
+  position: relative;
+  border-radius: 0.625rem;
+  overflow: hidden;
+  margin: 0.625rem;
+}
+
+.message.hide {
+  display: none;
+}
+.message.show {
+  display: block;
+}
+
+.dots {
+  position: absolute;
+  right: 0.3125rem;
+}
+.dots svg {
+  font-size: 1.25rem;
+}
+.btns-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 0.4375rem;
+  top: 6.25rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity, visibility, 0.5s ease-in-out;
+}
+.btns-container-active {
+  opacity: 1;
+  visibility: visible;
+  top: 3.75rem;
+}
+.btns-container-favorites {
+  display: flex;
+  flex-flow: column wrap;
+  position: absolute;
+  right: 0.3125rem;
+}
+
+.snap-container-open{
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 15px;
+  border-radius: 10px;
+  animation: snap 500ms ease-in forwards;
+}
+.snap-container-open.success{
+  background: green;
+  color: #f1f1f1;
+}
+.snap-container-open.error{
+  background: red;
+  bottom: 10px;
+  color: #f1f1f1;
+}
+
+@keyframes snap {
+  0% {
+    bottom: -15px;
+  }
+  100% {
+    bottom: 10px;
+  }  
+}
+  

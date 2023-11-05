@@ -1,10 +1,11 @@
 import { openMenu } from "./Open-menu.js";
-export const LoadCats = async (page, getGatitos, url, key,displayCats,savedFavorite,container) => {
+export const LoadCats = async (getGatitos, url, key,displayCats,savedFavorite,container) => {
+  let page = 0
   const loadCats = document.getElementById("load");
-  const data = await getGatitos(url, page, key);
 
-  loadCats.addEventListener("click", () => {
+  loadCats.addEventListener("click", async () => {
+    const data = await getGatitos(url, key,page);
     page += 1;
-    displayCats(data,savedFavorite,container,openMenu);
+    return displayCats(data,savedFavorite,container,openMenu);
   });
 };

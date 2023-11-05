@@ -38,6 +38,9 @@ body {
   align-items: center;
   position: relative;
 }
+.main-title{
+  text-align: center;
+}
 .titles {
   text-align: left;
   padding-left: 0.625rem;
@@ -123,6 +126,7 @@ body {
   padding: 10px 15px;
   border-radius: 10px;
   animation: snap 500ms ease-in forwards;
+  text-align: center;
 }
 .snap-container-open.success{
   background: green;

@@ -9,11 +9,15 @@ import { copyToClipboard } from "./CopyToClipboard.js";
 import { DisplayFavorites } from "../components/DisplayFavorites.js";
 import { errorIcon, succesIcon } from "./Icons.js";
 import { SnapBar } from "../components/Snapbar.js";
+import { createSubId } from "./createSubId.js";
+
+const user_id = createSubId();
 
 export async function LoadFavouritesCats() {
   const res = await fetch(API_FAVORITE_CATS, {
     headers: {
       "x-api-key": API_KEY,
+      "sub_id":user_id
     },
   });
   const data = await res.json();
@@ -22,6 +26,7 @@ export async function LoadFavouritesCats() {
   const IdToDelete = data.map((item) => item.id);
 
   favouritesContainer.innerHTML = "";
+  console.log(data)
   DisplayFavorites(UrlFavCats, deleteFavoriteCat, copyToClipboard, IdToDelete);
 }
 
@@ -31,9 +36,11 @@ export async function saveFavouriteCat(id) {
     headers: {
       "x-api-key": API_KEY,
       "Content-Type": "application/json",
+      "sub_id":user_id
     },
     body: JSON.stringify({
       image_id: id,
+      sub_id:user_id
     }),
   });
   let message = "";
@@ -60,6 +67,7 @@ export async function deleteFavoriteCat(id) {
     method: "DELETE",
     headers: {
       "x-api-key": API_KEY,
+      "sub_id":user_id
     },
   });
 

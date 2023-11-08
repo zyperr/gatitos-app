@@ -1,21 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gatitos random</title>
-    <link rel="stylesheet" href="main.css">
-</head>
-<body>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
     <h1 class="main-title">Gatitos aleatorios</h1>
-    
+
     <main id="app">
-        <section class="cats"></section>
-        <button id="load">Load</button>
-        <h2  class="titles">Favoritos</h2>
-        <section class="likeCats">
-        </section>
+      <section class="cats"></section>
+      <button id="load">Load</button>
+      <h2 class="titles">Favoritos</h2>
+      <section class="likeCats"></section>
     </main>
+    <span class="handle__modal">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="1em"
+        height="1em"
+        viewBox="0 0 24 24"
+      >
+        <path
+          fill="currentColor"
+          d="M11 16V7.85l-2.6 2.6L7 9l5-5l5 5l-1.4 1.45l-2.6-2.6V16h-2Zm-5 4q-.825 0-1.413-.588T4 18v-3h2v3h12v-3h2v3q0 .825-.588 1.413T18 20H6Z"
+        />
+      </svg>
+    </span>
+    <div class="form__wrapper">
+      <form>
+        <input type="file" name="file" id="file" accept="image/png, image/jpg, image/jpeg" />
+        <div class="preview__container"></div>
+        <button type="submit">Subir</button>
+    </form>
+    <button id="close__modal">Close</button>
+    </div>
+
     <script src="./src/main.js" type="module"></script>
-</body>
+  </body>
 </html>

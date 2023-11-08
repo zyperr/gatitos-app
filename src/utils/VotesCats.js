@@ -11,7 +11,6 @@ export async function LoadVotesCats(){
       }
     })
     const data = await res.json();
-    console.log(data)
     return data
   }
 export async function VoteUp(id){
@@ -29,8 +28,6 @@ export async function VoteUp(id){
       })
       
     })
-    const data = await res.json()
-    console.log(data)
   }
 export async function VoteDown(id){
     const res = await fetch(API_VOTES,{
@@ -47,6 +44,4 @@ export async function VoteDown(id){
       })
       
     })
-    const data = await res.json()
-      console.log(data)
   }

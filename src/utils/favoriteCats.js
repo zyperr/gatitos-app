@@ -26,7 +26,6 @@ export async function LoadFavouritesCats() {
   const IdToDelete = data.map((item) => item.id);
 
   favouritesContainer.innerHTML = "";
-  console.log(data)
   DisplayFavorites(UrlFavCats, deleteFavoriteCat, copyToClipboard, IdToDelete);
 }
 
